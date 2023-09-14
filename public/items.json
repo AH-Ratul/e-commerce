@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Smartphones",
+        "img": "./img/phone.png"
+    },
+    {
+        "id": 2,
+        "name": "Headphones",
+        "img": "./img/headphone.png"
+    },
+    {
+        "id": 3,
+        "name": "TV",
+        "img": "./img/tv.png"
+    },
+    {
+        "id": 4,
+        "name": "Desktops",
+        "img": "./img/desktop.png"
+    },
+    {
+        "id": 5,
+        "name": "Laptops",
+        "img": "./img/laptop.png"
+    }
+]
