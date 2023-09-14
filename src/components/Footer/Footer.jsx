@@ -16,13 +16,15 @@ const Footer = () => {
           <h1 className="text-2xl font-bold mb-4 text-gray-800">Information</h1>
           <Link className="mb-2 text-slate-600">Product Support</Link>
           <Link className="mb-2 text-slate-600">Checkout</Link>
-          <Link className="text-slate-600">License Policy</Link>
+          <Link className="mb-2 text-slate-600">License Policy</Link>
+          <Link className="text-slate-600">About Us</Link>
         </div>
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold mb-4 text-gray-800">
             Customer Service
           </h1>
           <Link className="mb-2 text-slate-600">Help Center</Link>
+          <Link className="mb-2 text-slate-600">Returns & Refunds</Link>
           <Link className="mb-2 text-slate-600">Contact Us</Link>
           <Link className="text-slate-600">Policies & Rules</Link>
         </div>

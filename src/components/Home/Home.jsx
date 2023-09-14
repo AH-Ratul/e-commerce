@@ -10,6 +10,7 @@ const Home = () => {
     loadItems();
   }, []);
 
+  // load items 
   const loadItems = async () => {
     const res = await fetch("items.json");
     const data = await res.json();
@@ -32,8 +33,9 @@ const Home = () => {
           <img src={item1} alt="" className="w-[80%]" />
         </div>
       </div>
+      
       <div>
-        <h1 className="text-3xl font-bold mt-16 mb-10 pl-11 text-slate-700">Popular Categories</h1>
+        <h1 className="text-3xl font-bold mt-16 mb-10 pl-20 text-slate-700">Popular Categories</h1>
         <div className="grid grid-cols-5 gap-3 pl-10 pr-20">
           {items.map((item) => (
             <Items key={item.id} item={item}></Items>

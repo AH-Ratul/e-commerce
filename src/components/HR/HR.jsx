@@ -7,7 +7,7 @@ const HR = () => {
         <div className="w-40 ">
           <hr />
         </div>
-        <p className="text-sm  mx-2">also login with</p>
+        <p className="text-sm  mx-2">or continue with</p>
         <div className="w-40">
           <hr />
         </div>
