@@ -1,11 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import HR from "../HR/HR";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../Footer/Footer";
 
 const Login = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [passValue, setPassValue] = useState('')
+
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value);
+  }
+
+  const handlePassValue = (e) => {
+    setPassValue(e.target.value);
+  }
+  
+  const login = () => {
+    console.log(inputValue);
+    console.log(passValue)
+
+    setInputValue('')
+    setPassValue('')
+  }
+
   return (
     <div className="top-28 relative  ">
       <div className="flex justify-center items-center">
@@ -16,6 +35,8 @@ const Login = () => {
             <p className="ml-20 ">Phone/Email</p>
             <input
               type="email"
+              value={inputValue}
+              onChange={handleInputValue}
               placeholder="enter your phone/email"
               required
               className="border p-2 w-64 mr-20  outline-none"
@@ -25,6 +46,8 @@ const Login = () => {
             <p className="ml-20">Password</p>
             <input
               type="password"
+              value={passValue}
+              onChange={handlePassValue}
               placeholder="enter your password"
               required
               className="border p-2 w-64 mr-20 outline-none"
@@ -36,6 +59,7 @@ const Login = () => {
             </Link>
             <button
               type="submit"
+              onClick={login}
               className="bg-red-600 hover:bg-gray-700 text-white p-3 cursor-pointer m-6 w-[30%] ml-[35%] rounded-full font-semibold"
             >
               LOG IN

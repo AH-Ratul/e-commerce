@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const DropDwon = () => {
   return (
-    <div className="right-0 ml-36 bg-white mt-3 p-5 absolute shadow-md ">
+    <div className="right-0 ml-36 bg-white mt-3 p-5 absolute shadow-md hidden group-hover:block ">
       <p className="text-sm mb-3 font-bold text-gray-400 text-center">
         Welcome to EARN-SHOP
       </p>
