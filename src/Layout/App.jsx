@@ -4,7 +4,7 @@ import {Outlet} from 'react-router-dom';
 
 const Main = () => {
     return (
-        <div>
+        <div className='select-none'>
             <Header></Header>
             <Outlet></Outlet>
         </div>

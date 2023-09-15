@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 
 const DropDwon = () => {
+
   return (
-    <div className="right-0 ml-36 bg-white mt-3 p-5 absolute shadow-md hidden group-hover:block ">
+    <div className="right-0 ml-40 bg-white mt-4 p-5 absolute shadow-md">
       <p className="text-sm mb-3 font-bold text-gray-400 text-center">
         Welcome to EARN-SHOP
       </p>
       <div className="flex justify-between items-center p-1 border-b pb-4">
         <Link
           to="/signup"
-          className="bg-red-500 px-3 py-1 text-white font-semibold"
+          className="bg-red-500 px-3 py-1 text-white text-base font-semibold"
         >
           Register
         </Link>
         <Link
           to="/login"
-          className="bg-orange-200 px-3 py-1 ml-3 font-semibold text-red-600 "
+          className="bg-orange-200 px-3 py-1 ml-3 text-base font-semibold text-red-600 "
         >
           Login
         </Link>

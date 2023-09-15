@@ -54,9 +54,6 @@ const Login = () => {
             />
           </div>
           <div className="flex flex-col justify-center ">
-            <Link className="hover:text-red-700 text-sm w-[30%] ml-[35%]">
-              Forget Your Password?
-            </Link>
             <button
               type="submit"
               onClick={login}
@@ -64,6 +61,9 @@ const Login = () => {
             >
               LOG IN
             </button>
+            <Link className="hover:text-red-700 text-sm w-[30%] ml-[35%]">
+              Forget Your Password?
+            </Link>
             <div className="flex flex-col justify-center items-center m-5">
               <HR></HR>
               <button>
