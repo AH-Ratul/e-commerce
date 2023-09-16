@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 
 const DropDwon = () => {
-
   return (
-    <div className="right-0 ml-40 bg-white mt-4 p-5 absolute shadow-md">
+    <div className="right-0 ml-40 bg-white mt-4 p-5 absolute border">
       <p className="text-sm mb-3 font-bold text-gray-400 text-center">
-        Welcome to EARN-SHOP
+        Welcome to NEAR-SHOP
       </p>
       <div className="flex justify-between items-center p-1 border-b pb-4">
         <Link

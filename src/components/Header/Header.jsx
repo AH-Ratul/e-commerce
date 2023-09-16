@@ -20,7 +20,7 @@ const Header = () => {
         setDropDownOpen(false);
     };
 
-    window.addEventListener("click", handleCLickOut);
+    document.addEventListener("click", handleCLickOut);
 
     return window.removeEventListener("click", handleCLickOut);
   }, []);
@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center pl-16 pr-16 p-5 fixed z-10 top-0 right-0 left-0 bg-white shadow-md">
-      <h1 className="font-bold text-3xl text-lime-500">EARN-SHOP</h1>
+      <h1 className="font-bold text-3xl text-lime-500">NEAR-SHOP</h1>
       <ul className="flex">
         <li>
           <NavLink

@@ -6,24 +6,24 @@ import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../Footer/Footer";
 
 const Login = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [passValue, setPassValue] = useState('')
+  const [inputValue, setInputValue] = useState("");
+  const [passValue, setPassValue] = useState("");
 
   const handleInputValue = (e) => {
     setInputValue(e.target.value);
-  }
+  };
 
   const handlePassValue = (e) => {
     setPassValue(e.target.value);
-  }
-  
+  };
+
   const login = () => {
     console.log(inputValue);
-    console.log(passValue)
+    console.log(passValue);
 
-    setInputValue('')
-    setPassValue('')
-  }
+    setInputValue("");
+    setPassValue("");
+  };
 
   return (
     <div className="top-28 relative  ">
