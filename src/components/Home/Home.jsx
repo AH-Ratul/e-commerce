@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative top-20 ">
+    <div className="relative top-14 ">
       <div className="grid grid-cols-2 gap-2 p-5 bg-slate-50 h-screen items-center">
         <div className="ml-28">
           <p className="text-3xl mb-9 text-orange-500">BEST IN 2023</p>
