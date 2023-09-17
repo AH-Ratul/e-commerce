@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoryMenu = () => {
   return (
-    <div className=" bg-white  p-5  absolute shadow-md">
+    <div className=" bg-white mt-4 p-5  absolute shadow-sm">
       <ul className="">
         <li className="mr-5">Smartphone</li>
         <li className="mr-5">Headphone</li>
