@@ -85,7 +85,7 @@ const Header = () => {
                 </p>
               </div>
             </NavLink>
-            {popCartOpen && <PopCart></PopCart>}
+            {popCartOpen && <PopCart></PopCart>} 
           </div>
 
           {/* manage toggle in user icon */}
