@@ -34,7 +34,7 @@ const Login = () => {
     return true;
   };
 
-  const handleInputChange = (e) => {
+  const loginInputChange = (e) => {
     const { name, value } = e.target;
 
     setLoginValue({
@@ -84,12 +84,12 @@ const Login = () => {
           <h1 className="text-3xl font-bold">Login</h1>
 
           <div className="flex justify-between items-center mt-16 mb-4">
-            <p className="ml-20 ">Phone/Email</p>
+            <p className="ml-20 ">Email</p>
             <input
               type="email"
               name="email"
               value={loginValue.email}
-              onChange={handleInputChange}
+              onChange={loginInputChange}
               placeholder="enter your phone/email"
               required
               className="border p-2 w-64 mr-20  outline-none"
@@ -101,7 +101,7 @@ const Login = () => {
               type="password"
               name="password"
               value={loginValue.password}
-              onChange={handleInputChange}
+              onChange={loginInputChange}
               placeholder="enter your password"
               required
               className="border p-2 w-64 mr-20 outline-none"
