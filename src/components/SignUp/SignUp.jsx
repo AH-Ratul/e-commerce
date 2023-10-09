@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import app from "../../firebase/firebase.init";
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -12,6 +14,7 @@ const SignUp = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const auth = getAuth(app);
 
   const validateSignUp = () => {
     if (
@@ -50,6 +53,20 @@ const SignUp = () => {
       return;
     }
 
+    const email = inputValue.email;
+    const password = inputValue.password;
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(result => {
+      const logUser = result.user;
+      console.log(logUser);
+      updateName(result.user, fullname)
+    })
+    .catch (error => {
+      console.error(error)
+    })
+
+
     try {
       const response = await fetch("http://localhost:5000/signup", {
         method: "POST",
@@ -78,6 +95,19 @@ const SignUp = () => {
       console.error("error: ", error);
     }
   };
+
+  const fullname = inputValue.fullname;
+  const updateName = (user, fullname) => {
+    
+    updateProfile(user ,{
+      displayName: fullname
+    })
+    .then(() => {
+      console.log('updated name')
+    })
+
+  }
+
 
   return (
     <div className="top-28 relative ">

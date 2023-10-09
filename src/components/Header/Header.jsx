@@ -12,12 +12,20 @@ import CategoryMenu from "./CategoryMenu";
 import { useEffect, useRef, useState } from "react";
 import UseToggle from "../../Hooks/UseToggle";
 import PopCart from "../PopCart/PopCart";
+import { useAuth } from "../../provider/AuthProvider";
 
 const Header = () => {
   const [isOpen, setIsOpen, ref] = UseToggle(false);
   const [isCatOpen, setIsCatOpen, cat] = UseToggle(false);
   const [popCartOpen, setPopCartOpen, pCart] = UseToggle(false);
   const [searchItem, setSearchItem] = useState("");
+  const { user } = useAuth();
+
+  // get the first character from user name 
+  const getInitials = () => {
+    const name = user.fullname;
+    return name ? name[0] : ""; //.split(' ').map((word) => word[0]).join('');
+  };
 
   // handle search field
   const handleSearch = (e) => {
@@ -34,7 +42,9 @@ const Header = () => {
   return (
     <div>
       <div className="flex justify-between items-center pl-16 pr-16 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
-        <h1 className="font-bold text-3xl text-lime-500">NEAR-SHOP</h1>
+        <Link to="/" className="font-bold text-3xl text-lime-500">
+          NEAR-SHOP
+        </Link>
         <ul className="flex items-center">
           <li>
             <NavLink
@@ -85,16 +95,22 @@ const Header = () => {
                 </p>
               </div>
             </NavLink>
-            {popCartOpen && <PopCart></PopCart>} 
+            {popCartOpen && <PopCart></PopCart>}
           </div>
 
           {/* manage toggle in user icon */}
           <div
             ref={ref}
             onClick={() => setIsOpen(!isOpen)}
-            className=" relative text-2xl"
+            className=" relative text-2xl "
           >
-            <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
+            {user ? (
+              <span className="border-2 border-green-500 font-semibold rounded-full cursor-pointer   p-1">
+                {getInitials(user.name)}
+              </span>
+            ) : (
+              <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
+            )}
             {isOpen && <DropDwon></DropDwon>}
           </div>
         </div>

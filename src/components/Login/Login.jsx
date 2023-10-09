@@ -1,46 +1,51 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import HR from "../HR/HR";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
+import { useAuth } from "../../provider/AuthProvider";
 
 const Login = () => {
-  const [loginValue, setLoginValue] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { loginWithGoogle, dbLogin } = useAuth();
+
+  const handleGoogleSignIn = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const validateLogin = () => {
-    if (!loginValue.email || !loginValue.password) {
+    if (!email || !password) {
       toast.error("Both email/phone and password are required.", {
         autoClose: 1000,
       });
       return false;
     }
 
-    if (!/^\S+@\S+\.\S+$/.test(loginValue.email)) {
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
       toast.error("Invalid email format.", { autoClose: 1000 });
       return false;
     }
 
-    if (loginValue.password.length < 6) {
+    if (password.length < 6) {
       toast.error("password must be at least 6 characters", {
         autoClose: 1000,
       });
       return false;
     }
     return true;
-  };
-
-  const loginInputChange = (e) => {
-    const { name, value } = e.target;
-
-    setLoginValue({
-      ...loginValue,
-      [name]: value,
-    });
   };
 
   const login = async (e) => {
@@ -57,23 +62,29 @@ const Login = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(loginValue),
+        body: JSON.stringify({ email, password }),
       });
 
       if (login_response.ok) {
+        const loggedUser = await login_response.json();
+        dbLogin(loggedUser); // store the user data in cotext
+
+        // store user data in local storage
+        localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+
         // clear the input field individually
-        setLoginValue({
-          email: "",
-          password: "",
-        });
+        setEmail("");
+        setPassword("");
 
         toast.success("Login Successfull!!!", { autoClose: 1000 });
+        navigate("/");
       } else {
         toast.error("Login Error!", { autoClose: 1000 });
       }
-      console.log(loginValue);
+      console.log("err");
     } catch (error) {
-      console.error(error);
+      // console.error(error);
+      console.log("error-->", error);
     }
   };
 
@@ -87,9 +98,8 @@ const Login = () => {
             <p className="ml-20 ">Email</p>
             <input
               type="email"
-              name="email"
-              value={loginValue.email}
-              onChange={loginInputChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="enter your phone/email"
               required
               className="border p-2 w-64 mr-20  outline-none"
@@ -99,9 +109,8 @@ const Login = () => {
             <p className="ml-20">Password</p>
             <input
               type="password"
-              name="password"
-              value={loginValue.password}
-              onChange={loginInputChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="enter your password"
               required
               className="border p-2 w-64 mr-20 outline-none"
@@ -120,16 +129,20 @@ const Login = () => {
             </Link>
             <div className="flex flex-col justify-center items-center m-5">
               <HR></HR>
-              <button>
-                <FontAwesomeIcon
-                  icon={faGoogle}
-                  className="text-3xl text-red-600 mt-5 text-center "
-                />
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  className="text-3xl text-blue-800 mt-5 text-center ml-4 "
-                />
-              </button>
+              <div className="flex gap-8">
+                <Link onClick={handleGoogleSignIn}>
+                  <FontAwesomeIcon
+                    icon={faGoogle}
+                    className="text-3xl text-red-600 mt-5 text-center "
+                  />
+                </Link>
+                <button>
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className="text-3xl text-blue-800 mt-5 text-center  "
+                  />
+                </button>
+              </div>
             </div>
           </div>
           <p className="text-center mt-8 text-sm">

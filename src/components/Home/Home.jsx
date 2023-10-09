@@ -38,7 +38,7 @@ const Home = () => {
         <h1 className="text-3xl font-bold mt-16 mb-10 pl-12 text-slate-700">
           Popular Categories
         </h1>
-        <div className="grid grid-cols-5 gap-3 pl-12 pr-16 ">
+        <div className="grid grid-cols-5 gap-1 pl-12 pr-16 ">
           {items.map((item) => (
             <Items key={item.id} item={item}></Items>
           ))}
