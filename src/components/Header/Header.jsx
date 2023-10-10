@@ -21,7 +21,7 @@ const Header = () => {
   const [searchItem, setSearchItem] = useState("");
   const { user } = useAuth();
 
-  // get the first character from user name 
+  // get the first character from user name
   const getInitials = () => {
     const name = user.fullname;
     return name ? name[0] : ""; //.split(' ').map((word) => word[0]).join('');
@@ -105,7 +105,7 @@ const Header = () => {
             className=" relative text-2xl "
           >
             {user ? (
-              <span className="border-2 border-green-500 font-semibold rounded-full cursor-pointer   p-1">
+              <span className="border border-rose-500 font-semibold rounded-full cursor-pointer text-rose-600 text-center px-3 py-1 pt-0">
                 {getInitials(user.name)}
               </span>
             ) : (

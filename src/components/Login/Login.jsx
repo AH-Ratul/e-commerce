@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link, json, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import HR from "../HR/HR";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../Footer/Footer";
@@ -12,6 +12,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { loginWithGoogle, dbLogin } = useAuth();
+  const location = useLocation();
+
+  const to = location?.state?.from?.pathname || "/";
 
   const handleGoogleSignIn = () => {
     loginWithGoogle()
@@ -77,7 +80,7 @@ const Login = () => {
         setPassword("");
 
         toast.success("Login Successfull!!!", { autoClose: 1000 });
-        navigate("/");
+        navigate(to);
       } else {
         toast.error("Login Error!", { autoClose: 1000 });
       }

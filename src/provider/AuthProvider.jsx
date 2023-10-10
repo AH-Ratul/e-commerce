@@ -33,6 +33,7 @@ const AuthProvider = ({ children }) => {
 
   const dbLogout = () => {
     setUser(null);
+    localStorage.removeItem('loggedUser')
   };
 
   const loginWithGoogle = () => {
