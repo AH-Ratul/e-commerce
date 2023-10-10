@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center pl-16 pr-16 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
+      <div className="flex justify-between items-center pl-36 pr-36 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
         <Link to="/" className="font-bold text-3xl text-lime-500">
           NEAR-SHOP
         </Link>
