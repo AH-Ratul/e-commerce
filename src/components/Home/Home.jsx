@@ -45,9 +45,9 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="ml-64 mr-20 grid grid-rows-2 gap-3">
+        <div className="ml-60 mr-20 grid grid-rows-2 gap-3">
           <div className="bg-black flex h-[279px]">
-            <div className="text-slate-100 p-2 mt-16 ml-5 absolute z-10">
+            <div className="text-slate-100 p-2 mt-16 ml-9 absolute z-10">
               <h1 className="text-xl mb-5 font-semibold">Modern Laptops</h1>
               <h3 className="text-2xl mb-3 font-bold">New Collection</h3>
               <Link className="text-orange-500 hover:underline">More</Link>
@@ -56,12 +56,12 @@ const Home = () => {
               <img
                 src="../../../public/img/lap.png"
                 alt="lap"
-                className="w-[290px] p-7 mt-16 ml-24 right-0 transform hover:scale-105 transition duration-500 ease-out"
+                className="w-[290px] p-7 mt-16 ml-32 right-0 transform hover:scale-105 transition duration-500 ease-out"
               />
             </div>
           </div>
           <div className="bg-black flex h-[279px]">
-            <div className="text-slate-100 p-2 mt-16 ml-5 absolute z-10">
+            <div className="text-slate-100 p-2 mt-16 ml-9 absolute z-10">
               <h1 className="text-xl mb-5 font-semibold">Latest Phones</h1>
               <h3 className="text-2xl mb-3 font-bold">New Collection</h3>
               <Link className="text-orange-500 hover:underline">More</Link>
@@ -70,7 +70,7 @@ const Home = () => {
               <img
                 src="../../../public/img/phone1.png"
                 alt="lap"
-                className="w-[220px] p-7 mt-8 ml-36 right-0 transform hover:scale-105 transition duration-500 ease-out"
+                className="w-[220px] p-7 mt-8 ml-48 right-0 transform hover:scale-105 transition duration-500 ease-out"
               />
             </div>
           </div>
