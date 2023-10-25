@@ -2,7 +2,7 @@ import React from "react";
 
 const PopCart = () => {
   return (
-    <div className="absolute -right-[110px] top-12 bg-white shadow-md h-[540px] w-96">
+    <div className="absolute -right-[210px] top-12 bg-white shadow-md h-[540px] w-96">
       <div className="bg-gray-700 w-full p-4 text-lg">
         <h1 className="text-white">Cart (0)</h1>
       </div>

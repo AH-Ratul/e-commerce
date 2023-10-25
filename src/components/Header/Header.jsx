@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center pl-36 pr-36 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
+      <div className="flex justify-between items-center pl-24 pr-24 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
         <Link to="/" className="font-bold text-3xl text-lime-500">
           NEAR-SHOP
         </Link>
@@ -49,7 +49,7 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              className="mr-7 text-3xl flex font-semibold hover:text-red-500 transition ease-out duration-200"
+              className="mr-7 text-3xl text-gray-700 flex font-semibold hover:text-red-500 transition ease-out duration-200"
             >
               <FaHome className="" />
             </NavLink>

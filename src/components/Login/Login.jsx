@@ -70,7 +70,7 @@ const Login = () => {
 
       if (login_response.ok) {
         const loggedUser = await login_response.json();
-        dbLogin(loggedUser); // store the user data in cotext
+        dbLogin(loggedUser); // store the user data in context
 
         // store user data in local storage
         localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
