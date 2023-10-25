@@ -103,7 +103,7 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="enter your phone/email"
+              placeholder="enter your email"
               required
               className="border p-2 w-64 mr-20  outline-none"
             />

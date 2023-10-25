@@ -2,14 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
   faCartPlus,
-  faHouse,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FaHome } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import DropDwon from "./DropDwon";
 import CategoryMenu from "./CategoryMenu";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import UseToggle from "../../Hooks/UseToggle";
 import PopCart from "../PopCart/PopCart";
 import { useAuth } from "../../provider/AuthProvider";
@@ -41,7 +40,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center pl-24 pr-24 p-3 fixed z-10 top-0 right-0 left-0 bg-white shadow-sm">
+      <div className="flex justify-between items-center pl-24 pr-24 p-3 fixed z-20 top-0 right-0 left-0 bg-slate-50 shadow-sm border-b">
         <Link to="/" className="font-bold text-3xl text-lime-500">
           NEAR-SHOP
         </Link>

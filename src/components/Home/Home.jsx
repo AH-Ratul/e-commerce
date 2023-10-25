@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
-import item1 from "../../../public/img/item1.png";
-import Items from "../Items/Items";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -22,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="relative top-9 ">
-      <div className="grid grid-cols-2 gap-2 p-1 h-screen items-center m-4 ">
+      <div className="grid grid-cols-2 gap-2 h-screen items-center  bg-slate-50">
         <div className="ml-20 bg-black grid grid-cols-2 h-[570px] w-[900px]">
           <div className="p-4 mt-36 ml-9">
             <h3 className="text-orange-500 font-semibold text-xl mb-4 ">
@@ -64,31 +62,22 @@ const Home = () => {
           </div>
           <div className="bg-black flex h-[279px]">
             <div className="text-slate-100 p-2 mt-16 ml-5 absolute z-10">
-              <h1 className="text-xl mb-5 font-semibold">Modern Laptops</h1>
+              <h1 className="text-xl mb-5 font-semibold">Latest Phones</h1>
               <h3 className="text-2xl mb-3 font-bold">New Collection</h3>
               <Link className="text-orange-500 hover:underline">More</Link>
             </div>
             <div>
               <img
-                src="../../../public/img/lap.png"
+                src="../../../public/img/phone1.png"
                 alt="lap"
-                className="w-[290px] p-7 mt-16 ml-24 right-0 transform hover:scale-105 transition duration-500 ease-out"
+                className="w-[220px] p-7 mt-8 ml-36 right-0 transform hover:scale-105 transition duration-500 ease-out"
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <h1 className="text-3xl font-bold mt-16 mb-10 pl-12 text-slate-700">
-          Popular Categories
-        </h1>
-        <div className="grid grid-cols-5 gap-1 pl-12 pr-16 ">
-          {items.map((item) => (
-            <Items key={item.id} item={item}></Items>
-          ))}
-        </div>
-      </div>
+      <div></div>
 
       <Footer></Footer>
     </div>
