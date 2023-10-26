@@ -1,12 +1,11 @@
 import React from "react";
-import Footer from "../Footer/Footer";
 import { useAuth } from "../../provider/AuthProvider";
 
 const UserProfile = () => {
   const { user } = useAuth();
 
   return (
-    <div className="top-24 absolute w-screen">
+    <div className="mt-24  w-screen">
       <div className="pl-64 pr-72">
         <h1 className="text-2xl font-semibold">My Profile</h1>
         <div className="mt-6 bg-teal-100 p-9  flex flex-col ">
@@ -31,8 +30,6 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };
