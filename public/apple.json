@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "img": "./img/apple/iphone15.png",
+        "name": "Apple Iphone 14 Pro Max",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 2,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 14 Pro",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 3,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 14 Pro Plus",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 4,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 14 ",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 5,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 13 Pro Max",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 6,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 13 Pro",
+        "price": "159,000-230,899",
+        "quantity": 4
+    },
+    {
+        "id": 1,
+        "img": "./img/apple/iphone-14-pro.png",
+        "name": "Apple Iphone 13",
+        "price": "159,000-230,899",
+        "quantity": 4
+    }
+    
+]

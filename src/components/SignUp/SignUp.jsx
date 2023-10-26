@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
@@ -180,7 +179,6 @@ const SignUp = () => {
           </p>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

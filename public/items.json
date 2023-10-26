@@ -1,27 +1,32 @@
 [
     {
         "id": 1,
-        "name": "Smartphones",
-        "img": "./img/phone.png"
+        "name": "Apple",
+        "img": "./img/apple.png",
+        "to": "/apple"
     },
     {
         "id": 2,
-        "name": "Headphones",
-        "img": "./img/headphone.png"
+        "name": "Samsung",
+        "img": "./img/samsung.png",
+        "to": "/samsung"
     },
     {
         "id": 3,
-        "name": "TV",
-        "img": "./img/tv.png"
+        "name": "Xioami",
+        "img": "./img/redmi.png",
+        "to": "/xiaomi"
     },
     {
         "id": 4,
-        "name": "Desktops",
-        "img": "./img/desktop.png"
+        "name": "Huawei",
+        "img": "./img/huawei.png",
+        "to": "/huawei"
     },
     {
         "id": 5,
-        "name": "Laptops",
-        "img": "./img/laptop.png"
+        "name": "Oppo",
+        "img": "./img/redmi.png",
+        "to": "/oppo"
     }
 ]

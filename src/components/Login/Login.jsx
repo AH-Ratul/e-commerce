@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import HR from "../HR/HR";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import { useAuth } from "../../provider/AuthProvider";
 
@@ -157,7 +156,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import Categories from "./components/Categories/Categories";
 import AuthProvider from "./provider/AuthProvider";
 import UserProfile from "./components/Profile/UserProfile";
 import PrivateRoute from "./route/PrivateRoute";
+import Apple from "./components/Phones/Apple";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path: 'apple',
+        element: <Apple></Apple>
+      }
     ],
   },
 ]);

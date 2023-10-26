@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import Items from "../Items/Items";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -77,9 +77,19 @@ const Home = () => {
         </div>
       </div>
 
-      <div></div>
-
-      <Footer></Footer>
+      <div className="pr-20 pl-20 mt-3">
+        <div className="bg-gradient-to-r from-teal-500 to-lime-200 pl-20 pr-20 rounded-2xl py-9 flex justify-between items-center">
+          <h1 className="text-xl text-rose-800 font-bold">Smartphones</h1>
+          <Link className="bg-orange-700 py-1 px-2 text-base rounded-md text-white">
+            Visit More
+          </Link>
+        </div>
+        <div className="grid grid-cols-5 items-center">
+          {items.map((item) => (
+            <Items key={item.id} item={item}></Items>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
