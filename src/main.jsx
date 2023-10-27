@@ -11,6 +11,8 @@ import AuthProvider from "./provider/AuthProvider";
 import UserProfile from "./components/Profile/UserProfile";
 import PrivateRoute from "./route/PrivateRoute";
 import Apple from "./components/Phones/Apple";
+import Admin from "./Pages/Admin";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,10 @@ const router = createBrowserRouter([
         path: "categories",
         element: <Categories></Categories>,
       },
-      {},
+      {
+        path: 'admin',
+        element: <Admin></Admin>
+      },
       {
         path: 'userProfile',
         element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
@@ -41,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: 'apple',
         element: <Apple></Apple>
+      },
+      {
+        path: 'productdetails',
+        element: <ProductDetails></ProductDetails>
       }
     ],
   },

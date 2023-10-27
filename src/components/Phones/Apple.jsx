@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Iphone = ({ apple }) => {
-  const { name, price, img } = apple;
+  const { name, price, image } = apple;
   return (
-    <div className="text-center border m-3 p-2">
-      <div>
-        <img src={img} alt="" className="w-20 ml-12" />
-        <p className="text-base font-semibold mt-3">{name}</p>
-        <p>&#2547;{price}</p>
+    <div className="border rounded m-3 p-3">
+      <div className="h-64 mb-5">
+        <img src={image} alt="" className="w-20 ml-12 h-44" />
+        <p className="text-sm hover:text-orange-600 hover:underline font-semibold mt-5 h-fit w-fit mb-4 ">
+          <Link to="/productdetails">{name}</Link>
+        </p>
+        <p className="text-xl text-orange-500 font-semibold ">
+          <span className="text-3xl ">&#2547; </span> {price}
+        </p>
       </div>
-      <button className="bg-zinc-800 text-white p-2 w-full mt-3 bottom-0">
-        Buy
-      </button>
     </div>
   );
 };
@@ -24,7 +26,7 @@ const Apple = () => {
   }, []);
 
   const loadApple = async () => {
-    const res = await fetch("apple.json");
+    const res = await fetch("http://localhost:5000/products");
     const data = await res.json();
     setApples(data);
 
