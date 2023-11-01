@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const Admin = () => {
   const [product, setProduct] = useState({
-    id: "",
+    id: '',
     name: "",
     price: "",
     quantity: "",
@@ -55,13 +55,13 @@ const Admin = () => {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(dataToSave),
+          body: dataToSave,
         });
 
         if (saveResponse.ok) {
           // Clear the form fields
           setProduct({
-            id: "",
+            id: '',
             name: "",
             price: "",
             quantity: "",

@@ -10,9 +10,11 @@ import Categories from "./components/Categories/Categories";
 import AuthProvider from "./provider/AuthProvider";
 import UserProfile from "./components/Profile/UserProfile";
 import PrivateRoute from "./route/PrivateRoute";
-import Apple from "./components/Phones/Apple";
+import Apple, { loadApple } from "./components/Phones/Apple";
 import Admin from "./Pages/Admin";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
+import ProductDetails, {
+  loadProduct,
+} from "./components/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,12 +30,16 @@ const router = createBrowserRouter([
         element: <Categories></Categories>,
       },
       {
-        path: 'admin',
-        element: <Admin></Admin>
+        path: "admin",
+        element: <Admin></Admin>,
       },
       {
-        path: 'userProfile',
-        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        path: "userProfile",
+        element: (
+          <PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "login",
@@ -44,13 +50,15 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-        path: 'apple',
-        element: <Apple></Apple>
+        path: "apple",
+        element: <Apple></Apple>,
+        loader: loadApple,
       },
       {
-        path: 'productdetails',
-        element: <ProductDetails></ProductDetails>
-      }
+        path: "productdetails/:pid/:name",
+        element: <ProductDetails></ProductDetails>,
+        loader: loadProduct,
+      },
     ],
   },
 ]);
