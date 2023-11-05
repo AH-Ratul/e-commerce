@@ -55,7 +55,7 @@ const Admin = () => {
           headers: {
             "content-type": "application/json",
           },
-          body: dataToSave,
+          body: JSON.stringify(dataToSave),
         });
 
         if (saveResponse.ok) {

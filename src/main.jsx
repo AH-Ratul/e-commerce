@@ -15,6 +15,7 @@ import Admin from "./Pages/Admin";
 import ProductDetails, {
   loadProduct,
 } from "./components/ProductDetails/ProductDetails";
+import Shipping from "./components/Shipping/Shipping.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
         element: <ProductDetails></ProductDetails>,
         loader: loadProduct,
       },
+      {
+        path: "shipping/:pid/:name",
+        element: <Shipping></Shipping>,
+        loader: loadProduct
+      }
     ],
   },
 ]);

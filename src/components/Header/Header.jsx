@@ -50,7 +50,9 @@ const Header = () => {
               to="/"
               className="mr-7 text-3xl text-gray-700 flex font-semibold hover:text-red-500 transition ease-out duration-200"
             >
-              <FaHome className="" />
+              <abbr title="Home">
+                <FaHome />
+              </abbr>
             </NavLink>
           </li>
           <li className="">
@@ -86,14 +88,16 @@ const Header = () => {
             onClick={() => setPopCartOpen(!popCartOpen)}
             className="relative flex mr-7"
           >
-            <NavLink className="text-2xl mr-5 text-gray-700 ">
-              <FontAwesomeIcon icon={faCartPlus} />
-              <div className="absolute -top-1 right-3">
-                <p className=" text-xs text-white font-bold rounded-full  px-[5px] bg-red-600 mb-5">
-                  0
-                </p>
-              </div>
-            </NavLink>
+            <abbr title="Cart">
+              <NavLink className="text-2xl mr-5 text-gray-700 ">
+                <FontAwesomeIcon icon={faCartPlus} />
+                <div className="absolute -top-1 right-3">
+                  <p className=" text-xs text-white font-bold rounded-full  px-[5px] bg-red-600 mb-5">
+                    0
+                  </p>
+                </div>
+              </NavLink>
+            </abbr>
             {popCartOpen && <PopCart></PopCart>}
           </div>
 
@@ -108,7 +112,9 @@ const Header = () => {
                 {getInitials(user.name)}
               </span>
             ) : (
-              <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
+              <abbr title="User">
+                <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
+              </abbr>
             )}
             {isOpen && <DropDwon></DropDwon>}
           </div>
