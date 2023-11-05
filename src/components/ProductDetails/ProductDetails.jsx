@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 export const loadProduct = async ({ params }) => {
   const data = await fetch(`http://localhost:5000/products?id=${params.pid}`);
@@ -11,6 +11,7 @@ export const loadProduct = async ({ params }) => {
 const ProductDetails = () => {
   const data = useLoaderData();
   const [count, setCount] = useState(1);
+  const navigate = useNavigate();
 
   const increase = () => {
     const add = count + 1;
@@ -24,7 +25,21 @@ const ProductDetails = () => {
     }
   };
 
-  
+  const handleBuyBtn = (e) => {
+    e.preventDefault();
+
+    const productData = {
+      item: count,
+      itemName: data[0].name,
+      itemPrice: data[0].price,
+      itemQuantity: data[0].quantity,
+      itemImg: data[0].image,
+    };
+
+    localStorage.setItem("Items", JSON.stringify(productData));
+
+    navigate(`/shipping/${data[0].id}/${data[0].name}`);
+  };
 
   return (
     <div className="mt-28 text-black bg-slate-100 ml-20 mr-20 flex h-[430px]">
@@ -49,12 +64,12 @@ const ProductDetails = () => {
           </button>
         </div>
         <div className="mt-20">
-          <Link
-            to={`/shipping/${data[0].id}/${data[0].name}`}
+          <button
+            onClick={handleBuyBtn}
             className="bg-sky-400 hover:bg-sky-500 text-xl  text-white px-16 py-2 mr-3 transition duration-300 ease-in-out"
           >
             Buy Now
-          </Link>
+          </button>
           <button className="bg-orange-400 hover:bg-orange-500 text-xl  text-white px-16 py-2 transition duration-300 ease-in-out">
             Add To Cart
           </button>
